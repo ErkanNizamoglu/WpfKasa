@@ -1,0 +1,62 @@
+﻿<Window x:Class="WpfPluAktarimKasa"
+        Name="WpfPluAktarimKasa"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStyle="None"
+    Title="Plu Aktarım" Height="183" 
+    ShowInTaskbar="False"
+    Topmost="True"
+    WindowStartupLocation="CenterOwner"
+    ResizeMode="NoResize" 
+    Width="430.662">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Style/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border CornerRadius="10"
+        BorderBrush="Gray"
+        BorderThickness="3"
+        Background="Beige"
+        Margin="24,24,24,10"
+        Padding="4">
+        <Border.Effect>
+            <DropShadowEffect Color="Gray"
+                      Opacity=".50"
+                      ShadowDepth="16" />
+        </Border.Effect>
+        <Grid Margin="3,11,3,3">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="1*"/>
+                <RowDefinition  Height="1*"/>
+                <RowDefinition  Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                
+            </Grid.ColumnDefinitions>
+
+            <Grid Name="SpHead" Grid.Row="0" >
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Grid.Column="1" Name="TextHead" Text="">
+                    </TextBlock>
+                </Viewbox>
+            </Grid>
+
+            <Grid Name="SpText" Grid.Row="1" >
+                <Viewbox Stretch="Uniform">
+                <TextBlock Grid.Column="1" Name="TextPlu" Text="">
+                </TextBlock>
+                </Viewbox>
+            </Grid>
+            <Grid Name="SpSoru" Grid.Column="0" Grid.Row="2" >
+                <ProgressBar Name="PbPlu">
+                </ProgressBar>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

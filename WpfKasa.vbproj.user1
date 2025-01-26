@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>X:\Publish\PerakendeKasa\|X:\Publish\PerakendeKasal\|ftp://81.214.141.248/|http://81.214.141.248:8047/|X:\müsteriler\ucler_sut\PerakendeWeb\</PublishUrlHistory>
+    <InstallUrlHistory>http://posgrup.com/PerakendeKasa/|http://posgrup.com/FaturaNumarala/|http://81.214.141.248:8048/</InstallUrlHistory>
+    <SupportUrlHistory>http://posgrup.com.tr|http://81.214.141.248:8048</SupportUrlHistory>
+    <UpdateUrlHistory>http://posgrup.com/PerakendeKasa/</UpdateUrlHistory>
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>tr-TR</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <ProjectView>ProjectFiles</ProjectView>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+  </PropertyGroup>
+</Project>

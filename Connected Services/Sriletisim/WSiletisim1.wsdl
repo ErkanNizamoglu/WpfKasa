@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://posgrup.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://posgrup.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://posgrup.com/">
+      <s:element name="ReadDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sql" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tbl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadDataTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sql" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tbl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadDataTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadDataTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadDataTableXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sql" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tbl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadDataTableXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadDataTableXmlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSql">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sql" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSqlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteSqlResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadSatislar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadSatislarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadSatislarResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadDataTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Dt">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadDataTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadDataTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YesNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SendCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Reply" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="YesNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="YesNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReadDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadDataSet" />
+  </wsdl:message>
+  <wsdl:message name="ReadDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadDataTableSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadDataTable" />
+  </wsdl:message>
+  <wsdl:message name="ReadDataTableSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadDataTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadDataTableXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadDataTableXml" />
+  </wsdl:message>
+  <wsdl:message name="ReadDataTableXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadDataTableXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSqlSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteSql" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSqlSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteSqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadSatislarSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadSatislar" />
+  </wsdl:message>
+  <wsdl:message name="UploadSatislarSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadSatislarResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadDataTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadDataTable" />
+  </wsdl:message>
+  <wsdl:message name="UploadDataTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadDataTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="YesNoSoapIn">
+    <wsdl:part name="parameters" element="tns:YesNo" />
+  </wsdl:message>
+  <wsdl:message name="YesNoSoapOut">
+    <wsdl:part name="parameters" element="tns:YesNoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSiletisimSoap">
+    <wsdl:operation name="ReadDataSet">
+      <wsdl:input message="tns:ReadDataSetSoapIn" />
+      <wsdl:output message="tns:ReadDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadDataTable">
+      <wsdl:input message="tns:ReadDataTableSoapIn" />
+      <wsdl:output message="tns:ReadDataTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadDataTableXml">
+      <wsdl:input message="tns:ReadDataTableXmlSoapIn" />
+      <wsdl:output message="tns:ReadDataTableXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSql">
+      <wsdl:input message="tns:ExecuteSqlSoapIn" />
+      <wsdl:output message="tns:ExecuteSqlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadSatislar">
+      <wsdl:input message="tns:UploadSatislarSoapIn" />
+      <wsdl:output message="tns:UploadSatislarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadDataTable">
+      <wsdl:input message="tns:UploadDataTableSoapIn" />
+      <wsdl:output message="tns:UploadDataTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="YesNo">
+      <wsdl:input message="tns:YesNoSoapIn" />
+      <wsdl:output message="tns:YesNoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSiletisimSoap" type="tns:WSiletisimSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadDataSet">
+      <soap:operation soapAction="http://posgrup.com/ReadDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadDataTable">
+      <soap:operation soapAction="http://posgrup.com/ReadDataTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadDataTableXml">
+      <soap:operation soapAction="http://posgrup.com/ReadDataTableXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSql">
+      <soap:operation soapAction="http://posgrup.com/ExecuteSql" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSatislar">
+      <soap:operation soapAction="http://posgrup.com/UploadSatislar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDataTable">
+      <soap:operation soapAction="http://posgrup.com/UploadDataTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YesNo">
+      <soap:operation soapAction="http://posgrup.com/YesNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSiletisimSoap12" type="tns:WSiletisimSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadDataSet">
+      <soap12:operation soapAction="http://posgrup.com/ReadDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadDataTable">
+      <soap12:operation soapAction="http://posgrup.com/ReadDataTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadDataTableXml">
+      <soap12:operation soapAction="http://posgrup.com/ReadDataTableXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSql">
+      <soap12:operation soapAction="http://posgrup.com/ExecuteSql" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSatislar">
+      <soap12:operation soapAction="http://posgrup.com/UploadSatislar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadDataTable">
+      <soap12:operation soapAction="http://posgrup.com/UploadDataTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="YesNo">
+      <soap12:operation soapAction="http://posgrup.com/YesNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSiletisim">
+    <wsdl:port name="WSiletisimSoap" binding="tns:WSiletisimSoap">
+      <soap:address location="http://192.168.1.142:3265/WSiletisim.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSiletisimSoap12" binding="tns:WSiletisimSoap12">
+      <soap12:address location="http://192.168.1.142:3265/WSiletisim.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

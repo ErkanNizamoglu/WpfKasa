@@ -1,0 +1,79 @@
+﻿<Window x:Class="WpfMsgBx"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    WindowStartupLocation="CenterScreen"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStyle="None"
+    Title="WpMsgBx" Height="350.868" Width="470.662">
+    <Border CornerRadius="10"
+        BorderBrush="Gray"
+        BorderThickness="3"
+        Background="Beige"
+        Margin="24,24,24,10"
+        Padding="4">
+        <Border.Effect>
+            <DropShadowEffect Color="Gray"
+                      Opacity=".50"
+                      ShadowDepth="16" />
+        </Border.Effect>
+        <Grid Margin="3,11,3,3">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="5*"/>
+                <RowDefinition  Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Name="SpSoru" Grid.Column="0" >
+                <Image Name="ImgSoru" Source="/Resimler/Question.png" Height="93">
+                    <Image.Effect>
+                        <DropShadowEffect Color="Gray" Opacity=".50" ShadowDepth="8" />
+                    </Image.Effect>
+                </Image>
+            </StackPanel>
+            <StackPanel Name="SpUyari" Grid.Column="0" >
+                <Image Name="ImgUyari" Source="/Resimler/Warning.png" Height="93">
+                    <Image.Effect>
+                        <DropShadowEffect Color="Gray" Opacity=".50" ShadowDepth="8" />
+                    </Image.Effect>
+                </Image>
+            </StackPanel>
+           
+            <TextBlock Grid.Column="1" 
+                               FontStretch="ExtraCondensed"  
+                               FontSize="25" TextWrapping="Wrap" 
+                               x:Name="LbSoru" 
+                               Foreground="Black" Margin="6,0,0,0"/>
+
+            <Grid Margin="3" Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button FontSize="25" FontWeight="Bold" Name="BtHayir" Grid.Column="1" IsCancel="True" Margin="1" Content="HAYIR">
+                    <Button.Effect>
+                        <DropShadowEffect Color="Gray"
+                        Opacity=".50"
+                        ShadowDepth="8" />
+                    </Button.Effect>
+                </Button>
+                <Button FontSize="25" FontWeight="Bold" Name="BtEvet" IsCancel="True" Content="EVET" Margin="1">
+                    <Button.Effect>
+                        <DropShadowEffect Color="Gray"
+                        Opacity=".50"
+                        ShadowDepth="8" />
+                    </Button.Effect>
+                </Button>
+                <Button FontSize="25" FontWeight="Bold" Name="BtTamam" IsDefault="True" Content="TAMAM" Margin="1" Grid.ColumnSpan="2" Grid.Row="1">
+                    <Button.Effect>
+                        <DropShadowEffect Color="Gray"
+                        Opacity=".50"
+                        ShadowDepth="8" />
+                    </Button.Effect>
+                </Button>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

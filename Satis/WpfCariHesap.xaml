@@ -1,0 +1,356 @@
+﻿<Window x:Class="WpfCariHesap"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:UcKlavye="clr-namespace:WpfKasa.Uc_Klavye"
+    WindowStartupLocation="CenterScreen"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStyle="None"
+    Title="Özel Fiyat" Height="600" Width="850">
+
+    <Window.LayoutTransform>
+        <ScaleTransform ScaleX="1.5" ScaleY="1.5" CenterX=".5" CenterY=".5" />
+    </Window.LayoutTransform>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Style/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="LbTextBlock" TargetType="{x:Type TextBlock}">
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="Background" Value="Wheat"/>
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="TextAlignment" Value="Left"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="FontSize" Value="27"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Border CornerRadius="10"
+        BorderBrush="Black"
+        BorderThickness="3"
+        Background="Beige"
+        Margin="24,24,24,10"
+        Padding="4">
+        <Border.Effect>
+            <DropShadowEffect Color="Gray"
+                      Opacity=".50"
+                      ShadowDepth="16" />
+        </Border.Effect>
+        <Grid Margin="3,3,3,3">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="55"/>
+                <RowDefinition  Height="1*"/>
+                <RowDefinition  Height="95"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="5*"/>
+                <ColumnDefinition  Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Viewbox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Stretch="Uniform">
+                <TextBlock x:Name="TbBaslik" 
+                           HorizontalAlignment="Left"  
+                           FontWeight="ExtraBold"  
+                           TextAlignment="Center" 
+                           Foreground="Black"   ><Run Language="tr-tr" Text="CARİ HESAP"/></TextBlock>
+            </Viewbox>
+
+            <Grid Grid.Row="1" Grid.Column="1" Background="Black">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="45"/>
+                    <RowDefinition  Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+
+                </Grid.ColumnDefinitions>
+
+                <TextBox Name="TbVergiNo" 
+                             Grid.Column="1"
+                             Width="Auto"   
+                             TextAlignment="Left"
+                             VerticalAlignment="Center"
+                             FontSize="35"
+                             Text="" 
+                             Foreground="Black" />
+
+                <Border BorderBrush="Red"   Grid.Column="0" Grid.Row="1" BorderThickness="2">
+                    <Grid  x:Name="GrHesap"  Margin="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="1*"/>
+                            <RowDefinition  Height="1*"/>
+                            <RowDefinition  Height="1*"/>
+                            <RowDefinition  Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+
+
+                        <Button x:Name="Bt7" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="0" 
+                                    Grid.Row="0">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock Text="7" />
+                            </Viewbox>
+                        </Button>
+                        <Button x:Name="Bt8" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="1" 
+                                    Grid.Row="0">
+
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock Text="8" />
+                            </Viewbox>
+                        </Button>
+                        <Button x:Name="Bt9" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="2" 
+                                    Grid.Row="0">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock Text="9" />
+                            </Viewbox>
+                        </Button>
+
+                        <Button x:Name="Bt4" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="0" 
+                                    Grid.Row="1">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock Text="4" />
+                            </Viewbox>
+                        </Button>
+                        <Button x:Name="Bt5" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="1" 
+                                    Grid.Row="1">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock Text="5" />
+                            </Viewbox>
+                        </Button>
+                        <Button x:Name="Bt6" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="2" 
+                                    Grid.Row="1">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock Text="6" />
+                            </Viewbox>
+                        </Button>
+                        <Button x:Name="Bt1" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="0" 
+                                    Grid.Row="2">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock Text="1" />
+                            </Viewbox>
+                        </Button>
+                        <Button x:Name="Bt2" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="1" 
+                                    Grid.Row="2">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock Text="2" />
+                            </Viewbox>
+                        </Button>
+                        <Button x:Name="Bt3" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="2" 
+                                    Grid.Row="2">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock Text="3" />
+                            </Viewbox>
+                        </Button>
+                        <Button x:Name="Bt0" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="0" 
+                                    Grid.Row="3" Grid.ColumnSpan="2">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock Text="0" />
+                            </Viewbox>
+                        </Button>
+
+                        <Button x:Name="BtSil" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="2" 
+                                    Grid.Row="3" Grid.ColumnSpan="1">
+                            <Viewbox Stretch="Uniform">
+                                <TextBlock Text="SİL" />
+                            </Viewbox>
+                        </Button>
+
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Grid Margin="3,4,3,3" Grid.Row="1" Grid.RowSpan="1" Grid.Column="0" Background="Aquamarine">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="55"/>
+                    <RowDefinition  Height="90"/>
+                    <RowDefinition  Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1" Grid.Row="0" 
+                      Background="Blue" Margin="2">
+                    <ComboBox Name="CbFaturaTuru" Text="EFATURA MÜKELLEFİ" HorizontalAlignment="Stretch">
+                        <ComboBoxItem  Height="55" FontSize="25" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"  Background="LightBlue">
+                            <Viewbox Stretch="Fill">
+                                <TextBlock Text="EFATURA MÜKELLEFİ" 
+                                       Width="{Binding ActualWidth, ElementName=CbType}"
+                                       Background="LightBlue" 
+                                       Style="{StaticResource LbTextBlock}" />
+                            </Viewbox>
+
+                        </ComboBoxItem>
+                        <ComboBoxItem Height="55" FontSize="25" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"  Background="LightBlue">
+                            <Viewbox Stretch="Fill">
+                                <TextBlock Text="EFATURA DEĞİL" 
+                                       Width="{Binding ActualWidth, ElementName=CbType}"
+                                       Background="LightBlue" 
+                                       Style="{StaticResource LbTextBlock}" />
+                            </Viewbox>
+                        </ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+                <Border BorderBrush="Red" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Background="Beige" BorderThickness="2">
+                    <TextBox x:Name="TbAciklama"  
+                        HorizontalAlignment="Left"  
+                        TextWrapping="Wrap"       
+                        Text=""
+                        FontSize="27"
+                        FontWeight="ExtraBold"  
+                        TextAlignment="Center" 
+                        Foreground="Black">
+                    </TextBox>
+                </Border>
+
+                <Border BorderBrush="Red" Grid.Column="0" Grid.Row="2" Background="Beige" BorderThickness="2">
+                    <TextBox x:Name="TbAdres"  
+                      HorizontalAlignment="Left"  
+                      TextWrapping="Wrap"       
+                      Text=""
+                      FontSize="27"
+                      FontWeight="ExtraBold"  
+                      TextAlignment="Center" 
+                      Foreground="Black"/>
+                </Border>
+            </Grid>
+
+            <Grid Margin="5" Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Button x:Name="BtCikis" 
+                        Margin="2"
+                        Background="Red"
+                        FontSize="42" 
+                        Style="{StaticResource MetroButton}"  
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch" 
+                        Grid.Column="0"
+                        Width="Auto" 
+                        Height="Auto">
+
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="ÇIKIŞ" />
+                    </Viewbox>
+
+                </Button>
+
+                <Button x:Name="BtTemizle"
+                        Margin="2"
+                        Background="Yellow"
+                        FontSize="42" 
+                        Style="{StaticResource MetroButton}"  
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch" 
+                        Grid.Column="1"
+                        Width="Auto" 
+                        Height="Auto">
+
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="TEMİZLE" />
+                    </Viewbox>
+
+                </Button>
+
+
+                <Button x:Name="BtSorgula" 
+                        Margin="2"
+                        Background="LightGreen"  
+                        FontSize="42" 
+                        Style="{StaticResource MetroButton}"  
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch" 
+                        Grid.Column="2"
+                        Width="Auto" 
+                        Height="Auto">
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="SORGULA" />
+                    </Viewbox>
+
+                </Button>
+
+                <Button x:Name="BtKabul"  
+                        Margin="2"
+                        Background="Blue"  
+                        FontSize="45" 
+                        Style="{StaticResource MetroButton}"  
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch" 
+                        Grid.Column="3"
+                        Width="Auto" 
+                        Height="Auto">
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="KABUL" />
+                    </Viewbox>
+
+                </Button>
+            </Grid>
+            <Grid Name="GrKlavye" Margin="1" Grid.Row="3" Grid.ColumnSpan="4">
+                <UcKlavye:UcKlavye ButtonClick="KlavyeSec" />
+            </Grid>
+
+
+
+
+
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,122 @@
+﻿USE [PerakendeLdb]
+GO
+/****** Object:  Trigger [dbo].[hs_stoktoplam]    Script Date: 7.07.2021 16:26:54 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TRIGGER [dbo].[hs_stoktoplam]
+  ON [dbo].[hareket_satir]
+AFTER INSERT,UPDATE,DELETE
+  AS
+BEGIN
+declare @createdate datetime
+declare @modifieddate datetime
+declare @tarih datetime
+declare @hsguid nvarchar(36)
+declare @guid nvarchar(36)
+declare @magazaguid nvarchar(36)
+declare @suberef integer
+declare @baslikguid nvarchar(36)
+declare @fisturu integer
+declare @fiskod nvarchar(150)
+declare @islemyonu integer
+declare @urunguid nvarchar(36)
+declare @miktar decimal(18,5)
+declare @fiyat decimal(18,5)
+declare @brut_tutar decimal(18,5)
+declare @net_tutar decimal(18,5)
+declare @upload bit
+declare @iptal bit
+
+SET @guid = NEWID()
+
+SELECT	@hsguid			= [guid],
+		@urunguid		= [urunguid],
+		@miktar			= [miktar],
+		@fiyat			= [fiyat],
+		@net_tutar		= [net_tutar],
+		@brut_tutar		= [brut_tutar],
+		@islemyonu		= [islemyonu],
+		@baslikguid		= [baslikguid],
+		@iptal			= [iptal],
+		@upload			= [upload],
+		@createdate		= GETDATE(),
+		@modifieddate	= [modifieddate]
+		from inserted
+
+declare @stoktoplamguid nvarchar(36)
+
+SELECT  @fisturu	= [fisturu],
+		@fiskod		= [fiskod],
+		@tarih		= [tarih],
+		@suberef    = [suberef]
+		from hareket_baslik 
+		where  [guid] = @baslikguid
+
+SELECT  @magazaguid	= [guid] from sube where  [ref] = @suberef
+
+SELECT @stoktoplamguid = [guid] 
+		from uruntoplam where  [satirguid] = @hsguid
+
+if @hsguid is not null
+		Begin
+			if @stoktoplamguid is not null
+					Begin
+						update uruntoplam set
+						 [urunguid] = @urunguid,
+						 [miktar] = @miktar,
+						 [fiyat] = @fiyat,
+						 [nettutar]	= @net_tutar,
+						 [tutar]	= @brut_tutar,
+						 [islemyonu] = @islemyonu,
+						 [magazaguid] = @magazaguid,
+						 [fisturu] = @fisturu,
+						 [fiskod] = @fiskod,
+						 [islemtarihi] = @tarih,
+						 [iptal] = @iptal,
+						 [upload] = 0,
+						 [modifieddate] = GETDATE()
+						 where @hsguid = satirguid
+					End
+			else
+					Begin
+						insert into uruntoplam
+						([guid],
+						 [urunguid],
+						 [miktar],
+						 [fiyat],
+						 [nettutar],
+						 [tutar],
+						 [islemyonu],
+						 [satirguid],
+						 [magazaguid],
+						 [fisturu],
+						 [fiskod],
+						 [baslikguid],
+						 [islemtarihi],
+						 [iptal],
+						 [upload],
+						 [createdate],
+						 [modifieddate])
+						values
+						(@guid,
+						 @urunguid,
+						 @miktar,
+						 @fiyat,
+						 @brut_tutar,
+						 @net_tutar,
+						 @islemyonu,
+						 @hsguid,
+						 @magazaguid,
+						 @fisturu,
+						 @fiskod,
+						 @baslikguid,
+						 @tarih,
+						 @iptal,
+						 0,
+						GETDATE(),
+						@modifieddate)
+					End
+			End
+		End

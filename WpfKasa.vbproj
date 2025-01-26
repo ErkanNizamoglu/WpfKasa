@@ -1,0 +1,1302 @@
+﻿<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF7432CD-6386-4296-B072-84E537AAEB8D}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WpfKasa</RootNamespace>
+    <AssemblyName>WpfKasa</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>X:\Publish\PerakendeKasa\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://posgrup.com/PerakendeKasa/</InstallUrl>
+    <UpdateUrl>http://posgrup.com/PerakendeKasa/</UpdateUrl>
+    <SupportUrl>http://posgrup.com.tr</SupportUrl>
+    <ProductName>PerakendeKasa</ProductName>
+    <PublisherName>Erkan</PublisherName>
+    <SuiteName>PerakendeKasa</SuiteName>
+    <MinimumRequiredVersion>2.3.1.11</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>index.html</WebPage>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>112</ApplicationRevision>
+    <ApplicationVersion>2.3.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>true</IncrementalBuild>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WpfKasa.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>false</IncrementalBuild>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WpfKasa.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ibrahimin_yapt_______res_nnH_8.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9A86353D74EAEE1CABFCB95459DD8CE45D9B9423</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>WpfKasa_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarcodeLib">
+      <HintPath>..\..\Kalender\Perakende\bin\Debug\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\WpfPerakendeMSSQL\packages\Ionic.Zip.1.9.1.8\lib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\WpfPerakendeMSSQL\packages\ZXing.Net.0.16.9\lib\net40\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\WpfPerakendeMSSQL\packages\ZXing.Net.0.16.9\lib\net40\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Application.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Application.xaml.vb">
+      <DependentUpon>Application.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\CVeriban_EarsivFatura.vb" />
+    <Compile Include="Class\CVeriban_Efatura.vb" />
+    <Compile Include="Class\C_Upgrade_Kasa.vb" />
+    <Compile Include="Class\C_Versiyon.vb" />
+    <Compile Include="Class\WpfPluAktarimKasa.xaml.vb">
+      <DependentUpon>WpfPluAktarimKasa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\EArsivfaturaVeribanServiceReference\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\EfaturaVeribanServiceReference\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\Sriletisim\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Module\M_QueryKasa.vb" />
+    <Compile Include="Module\M_RegKasa.vb" />
+    <Compile Include="Module\M_DataKasa.vb" />
+    <Compile Include="Raporlar\SatisRaporlari\Wpf_RaporSatisUrunler.xaml.vb">
+      <DependentUpon>Wpf_RaporSatisUrunler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\C_SatisTerazi.vb" />
+    <Compile Include="Satis\C_TabloUpgrade.vb" />
+    <Compile Include="Satis\C_Zraporu.vb" />
+    <Compile Include="Satis\UcWaitWindow.xaml.vb">
+      <DependentUpon>UcWaitWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\WpfDegisimFisi.xaml.vb">
+      <DependentUpon>WpfDegisimFisi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\WpfAskiListe.xaml.vb">
+      <DependentUpon>WpfAskiListe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\WpfFisSayim.xaml.vb">
+      <DependentUpon>WpfFisSayim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\WpfFonksiyon.xaml.vb">
+      <DependentUpon>WpfFonksiyon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\WpfFiyatGor.xaml.vb">
+      <DependentUpon>WpfFiyatGor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\WpfListeSube.xaml.vb">
+      <DependentUpon>WpfListeSube.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\WpfCariHesap.xaml.vb">
+      <DependentUpon>WpfCariHesap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\Wpf_ListeUrunler.xaml.vb">
+      <DependentUpon>Wpf_ListeUrunler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\WpfPluKasa.xaml.vb">
+      <DependentUpon>WpfPluKasa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\Wpf_ListeSayim.xaml.vb">
+      <DependentUpon>Wpf_ListeSayim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\W_CariHesap.xaml.vb">
+      <DependentUpon>W_CariHesap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\W_EkranKilit.xaml.vb">
+      <DependentUpon>W_EkranKilit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\W_Etiketleme.xaml.vb">
+      <DependentUpon>W_Etiketleme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\W_Gecmis.xaml.vb">
+      <DependentUpon>W_Gecmis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\W_GramajUrun.xaml.vb">
+      <DependentUpon>W_GramajUrun.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb" />
+    <Compile Include="UserControl\Uc.xaml.vb">
+      <DependentUpon>Uc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Uc_Klavye.xaml.vb">
+      <DependentUpon>Uc_Klavye.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Uc_Numarator.xaml.vb">
+      <DependentUpon>Uc_Numarator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Uc_Wait.xaml.vb">
+      <DependentUpon>UC_Wait.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\WpfKullaniciSecimKasa.xaml.vb">
+      <DependentUpon>WpfKullaniciSecimKasa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\WpfMsgBx.xaml.vb">
+      <DependentUpon>WpfMsgBx.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\WpfOzelFiyat.xaml.vb">
+      <DependentUpon>WpfOzelFiyat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\WpfSatisKasa.xaml.vb">
+      <DependentUpon>WpfSatisKasa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Satis\WpfVeritabaniAyarlariKasa.xaml.vb">
+      <DependentUpon>WpfVeritabaniAyarlariKasa.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows" />
+    <Import Include="System.Windows.Controls" />
+    <Import Include="System.Windows.Data" />
+    <Import Include="System.Windows.Documents" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Shapes" />
+    <Import Include="System.Windows.Media" />
+    <Import Include="System.Windows.Media.Imaging" />
+    <Import Include="System.Windows.Navigation" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\C_ChkDataLocalDb.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWpfExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.WPF.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\IntegrationService.wsdl" />
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\IntegrationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\WpfKasa.EArsivfaturaVeribanServiceReference.DocumentSendResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\WpfKasa.EArsivfaturaVeribanServiceReference.DownloadResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\WpfKasa.EArsivfaturaVeribanServiceReference.EArchiveInvoiceQueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\WpfKasa.EArsivfaturaVeribanServiceReference.EArchiveOkcDocumentQueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\WpfKasa.EArsivfaturaVeribanServiceReference.EArchivePurchaseInvoiceQueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\WpfKasa.EArsivfaturaVeribanServiceReference.EArchiveReceiptQueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\WpfKasa.EArsivfaturaVeribanServiceReference.OperationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\WpfKasa.EArsivfaturaVeribanServiceReference.TransferQueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\WpfKasa.EArsivfaturaVeribanServiceReference.TransferResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\TransferDocumentService.wsdl" />
+    <None Include="Connected Services\EfaturaVeribanServiceReference\TransferDocumentService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\TransferDocumentService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\TransferDocumentService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.ActivationEnvelope.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.CustomerData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.CustomerInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.CustomerSeries.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.DespatchStatusData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.DespatchStatusDataForConnetctor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.DownloadResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.InvoiceShortStatusDataForConnetctor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.InvoiceStatusData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.InvoiceStatusDataForConnetctor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.OperationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.PurchaseDespatchViewModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.PurchaseInvoices.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.ReceivedTransferQueueViewModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.SalesDespatchViewModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.SalesInvoices.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.SellerBuyerDespatchList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.SellerBuyerList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\WpfKasa.EfaturaVeribanServiceReference.UserAccountActivationInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Sriletisim\WSiletisim1.wsdl" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\DataSources\System.Data.DataTable.datasource" />
+    <None Include="My Project\DataSources\System.Xml.XmlNode.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="WpfKasa_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Class\WpfPluAktarimKasa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Raporlar\SatisRaporlari\Wpf_RaporSatisUrunler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\UcWaitWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Satis\WpfDegisimFisi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Satis\WpfAskiListe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\WpfFisSayim.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\WpfFonksiyon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\WpfFiyatGor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\WpfListeSube.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\WpfCariHesap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\Wpf_ListeUrunler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\WpfPluKasa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\Wpf_ListeSayim.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\W_CariHesap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Satis\W_EkranKilit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Satis\W_Etiketleme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Satis\W_Gecmis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Satis\W_GramajUrun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\UcStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\Uc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\Uc_Klavye.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\Uc_Numarator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\UC_Wait.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\WpfKullaniciSecimKasa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\WpfMsgBx.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\WpfOzelFiyat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\WpfSatisKasa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Satis\WpfVeritabaniAyarlariKasa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\approve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box_approve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout_coloumns.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\locked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netiz park logo.pdf" />
+    <None Include="Resources\piano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yerliuretim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ibrahimin_yapt_______res_nnH_8.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\arti.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\cocacola_kutu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\cocacola_kutu2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\cocacola_sise.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\cocacola_zero.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\eksi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Güncelle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\home.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\home1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\home3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\kasa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\kasa_256x256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\masalar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\masalar1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\printer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\printer2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\printer3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\printer4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Rabia.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Rabia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\sepet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\sepet2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\sepet3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\sol_ok_yesil.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Tekerlek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\tost_peynirli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\uye-ol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\yazici3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\yazici3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\yazici4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\YerliUretim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netiz park logo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netiz park logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netiz.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uclerlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GelirLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="QueryTxt\HareketSatirTrigger.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\EArsivfaturaVeribanServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\EfaturaVeribanServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\Sriletisim\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EArsivfaturaVeribanServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\TransferDocumentService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\EfaturaVeribanServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Sriletisim\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Sriletisim\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Sriletisim\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Sriletisim\WSiletisim1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Leadtools">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Async.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Codecs">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Codecs.Bmp.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Codecs.Cmp.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Codecs.Cmw.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Codecs.Fax.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Codecs.Gif.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Codecs.J2k.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Codecs.Jb2.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Codecs.Jbg.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Codecs.Png.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Codecs.Raw.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Codecs.Tif.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.ColorConversion">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Drawing">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Drawing.MP">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.ImageProcessing.Color">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.ImageProcessing.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.ImageProcessing.Effects">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.ImageProcessing.Kernel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.ImageProcessing.SpecialEffects">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.ImageProcessing.Utilities">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Logging">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Leadtools.Svg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\BusinessCard.Names.en.dic">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\BusinessCard.Titles.en.dic">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.Cmc7.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.de.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.de.dic">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.en.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.en.bin2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.en.dic">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.es.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.es.dic">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.Field.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.fr.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.fr.dic">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.icr.en.p1.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.icr.en.p2.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.icr.en.p3.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.icr.en.p4.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.icr.en.p5.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.icr.en.p6.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.icr.en.p7.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.icr.en.p8.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.it.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.it.dic">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.Micr.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\LEAD.Mrz.bin">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="LEADTOOLS\OcrLEADRuntime\US_Cities.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="..\SpTablolar\SpTablolar.projitems" Label="Shared" />
+  <Import Project="..\SpPrint\SpPrint.projitems" Label="Shared" />
+  <Import Project="..\SpMdata\SpMdata.projitems" Label="Shared" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="..\WpfPerakendeMSSQL\packages\Leadtools.Kernel.21.0.0.2\build\net40\Leadtools.Kernel.targets" Condition="Exists('..\WpfPerakendeMSSQL\packages\Leadtools.Kernel.21.0.0.2\build\net40\Leadtools.Kernel.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\WpfPerakendeMSSQL\packages\Leadtools.Kernel.21.0.0.2\build\net40\Leadtools.Kernel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\WpfPerakendeMSSQL\packages\Leadtools.Kernel.21.0.0.2\build\net40\Leadtools.Kernel.targets'))" />
+    <Error Condition="!Exists('..\WpfPerakendeMSSQL\packages\Leadtools.Formats.Raster.Common.21.0.0.2\build\net40\Leadtools.Formats.Raster.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\WpfPerakendeMSSQL\packages\Leadtools.Formats.Raster.Common.21.0.0.2\build\net40\Leadtools.Formats.Raster.Common.targets'))" />
+    <Error Condition="!Exists('..\WpfPerakendeMSSQL\packages\Leadtools.Image.Processing.21.0.0.2\build\net40\Leadtools.Image.Processing.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\WpfPerakendeMSSQL\packages\Leadtools.Image.Processing.21.0.0.2\build\net40\Leadtools.Image.Processing.targets'))" />
+    <Error Condition="!Exists('..\WpfPerakendeMSSQL\packages\Leadtools.Ocr.Languages.Main.NET.21.0.0.2\build\net40\Leadtools.Ocr.Languages.Main.NET.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\WpfPerakendeMSSQL\packages\Leadtools.Ocr.Languages.Main.NET.21.0.0.2\build\net40\Leadtools.Ocr.Languages.Main.NET.targets'))" />
+  </Target>
+  <Import Project="..\WpfPerakendeMSSQL\packages\Leadtools.Formats.Raster.Common.21.0.0.2\build\net40\Leadtools.Formats.Raster.Common.targets" Condition="Exists('..\WpfPerakendeMSSQL\packages\Leadtools.Formats.Raster.Common.21.0.0.2\build\net40\Leadtools.Formats.Raster.Common.targets')" />
+  <Import Project="..\WpfPerakendeMSSQL\packages\Leadtools.Image.Processing.21.0.0.2\build\net40\Leadtools.Image.Processing.targets" Condition="Exists('..\WpfPerakendeMSSQL\packages\Leadtools.Image.Processing.21.0.0.2\build\net40\Leadtools.Image.Processing.targets')" />
+  <Import Project="..\WpfPerakendeMSSQL\packages\Leadtools.Ocr.Languages.Main.NET.21.0.0.2\build\net40\Leadtools.Ocr.Languages.Main.NET.targets" Condition="Exists('..\WpfPerakendeMSSQL\packages\Leadtools.Ocr.Languages.Main.NET.21.0.0.2\build\net40\Leadtools.Ocr.Languages.Main.NET.targets')" />
+</Project>

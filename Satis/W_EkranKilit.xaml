@@ -1,0 +1,67 @@
+﻿<Window x:Class="W_EkranKilit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:UcNumarator="clr-namespace:WpfKasa.Uc_Numarator"
+    WindowStartupLocation="CenterScreen"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStyle="None"
+    Title="WpMsgBx" Height="550" Width="550">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary  Source="/Style/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Border CornerRadius="10"
+        BorderBrush="Gray"
+        BorderThickness="3"
+        Background="Beige"
+        Margin="24,24,24,10"
+        Padding="4">
+        <Border.Effect>
+            <DropShadowEffect Color="Gray"
+                      Opacity=".50"
+                      ShadowDepth="16" />
+        </Border.Effect>
+        <Grid Margin="3,11,3,3">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="65"/>
+                <RowDefinition  Height="5*"/>
+                <RowDefinition  Height="75"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            
+
+
+            <PasswordBox x:Name="TbSifre" 
+                    Background="AliceBlue"
+                    FontSize="35"  
+                    Height="Auto" 
+                    Width="Auto"/>
+
+            <Button x:Name="BtTamam"  
+                        Background="LightBlue"
+                        FontSize="42" 
+                        Style="{StaticResource MetroButton}"  
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch" 
+                        Grid.Row="2"
+                        Width="Auto" 
+                        Height="Auto" Margin="-3,0,3,0">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="TAMAM"/>
+                </Viewbox>
+            </Button>
+
+            <Grid Margin="3" Grid.Row="1" Grid.Column="1">
+                <UcNumarator:UcNumarator x:Name="UcNumarator" NumaratorClick="KlavyeSec" Width="Auto" Height="Auto"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

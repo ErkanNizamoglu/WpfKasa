@@ -1,0 +1,255 @@
+﻿<Window x:Class="W_Etiketleme"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ETİKETLEME"  
+        Loaded="Main" AllowDrop="True">
+    <Window.LayoutTransform>
+        <ScaleTransform ScaleX="1.5" ScaleY="1.5" CenterX=".5" CenterY=".5" />
+    </Window.LayoutTransform>
+    <Window.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary  Source="/Style/Styles.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid  x:Name="GrAna" Background="DarkGray">
+        <Grid Margin="2,-5,2,9" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="2*"/>
+                <RowDefinition  Height="15*"/>
+                <RowDefinition  Height="15*"/>
+                <RowDefinition  Height="4*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Border Grid.Column="6" Grid.Row="1" Grid.RowSpan="4"  CornerRadius="5" BorderThickness="3" BorderBrush="Lime" SnapsToDevicePixels="True" Background="DarkGray">
+                <Grid Margin="2" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="1*"/>
+                        <RowDefinition  Height="1*"/>
+                        <RowDefinition  Height="1*"/>
+                        <RowDefinition  Height="1*"/>
+                        <RowDefinition  Height="1*"/>
+                        <RowDefinition  Height="1*"/>
+                        <RowDefinition  Height="1*"/>
+                        <RowDefinition  Height="1*"/>
+                        <RowDefinition  Height="1*"/>
+                        <RowDefinition  Height="1*"/>
+                        <RowDefinition  Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Name="BtYukari" Grid.Row="0" Margin="3" FontSize="15" Background="Blue"  Style="{StaticResource RoundedButton}">
+                        <Viewbox>
+                            <TextBlock TextWrapping="Wrap"><Run Language="tr-tr" Text="YUKARI"/></TextBlock>
+                        </Viewbox>
+                    </Button>
+                    <Button Name="BtAsagi" Margin="3" Grid.Row="1"  FontSize="15" Background="Yellow"  Style="{StaticResource RoundedButton}">
+                        <Viewbox>
+                            <TextBlock TextWrapping="Wrap"><Run Language="tr-tr" Text="AŞAĞI"/></TextBlock>
+                        </Viewbox>
+                    </Button>
+                    <Button Name="BtSil" Margin="3" Grid.Row="2" FontSize="15" Background="Red"  Style="{StaticResource RoundedButton}">
+                        <Viewbox>
+                            <TextBlock TextWrapping="Wrap"><Run Language="tr-tr" Text="SİL"/></TextBlock>
+                        </Viewbox>
+                    </Button>
+                    <Button Name="BtSec" Margin="3" Grid.Row="3"  FontSize="15" Background="LimeGreen"  Style="{StaticResource RoundedButton}">
+                        <Viewbox>
+                            <TextBlock TextWrapping="Wrap"><Run Language="tr-tr" Text="SEÇ"/></TextBlock>
+                        </Viewbox>
+                    </Button>
+                    <Button Name="BtYaz" Grid.Row="4" Margin="4" FontSize="20" Background="Salmon"  Style="{StaticResource RoundedButton}">
+                        <Viewbox>
+                            <TextBlock TextWrapping="Wrap"><Run Language="tr-tr" Text="YAZ"/></TextBlock>
+                        </Viewbox>
+                    </Button>
+
+
+                    <Button Name="BtTumunuSec"  Grid.Row="5" FontSize="20" Background="DimGray" Style="{StaticResource RoundedButton}">
+                        <Viewbox>
+                            <TextBlock TextWrapping="Wrap"><Run Language="tr-tr" Text="TÜMÜNÜ SEÇ"/></TextBlock>
+                        </Viewbox>
+
+                    </Button>
+                    <Button Name="BtListeSil" Grid.Row="6" Margin="3" FontSize="20" Background="Blue" Style="{StaticResource RoundedButton}">
+                        <Viewbox>
+                            <TextBlock TextWrapping="Wrap"><Run Language="tr-tr" Text="LİSTE SİL"/></TextBlock>
+                        </Viewbox>
+                    </Button>
+                    <Button Name="BtSecilenleriSil" Grid.Row="7" Margin="3" FontSize="20" Background="Gainsboro" Style="{StaticResource RoundedButton}">
+                        <Viewbox>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center"><Run Language="tr-tr" Text="SEÇİLENLERİ SİL"/></TextBlock>
+                        </Viewbox>
+                    </Button>
+                    <Button Name="BtDeğişenler" Grid.Row="8" Margin="3" FontSize="15" Background="Bisque"  Style="{StaticResource RoundedButton}">
+                        <Viewbox>
+                            <TextBlock TextWrapping="Wrap"><Run Language="tr-tr" Text="DEĞİŞENLER"/></TextBlock>
+                        </Viewbox>
+                    </Button>
+                    <Button Name="BtGramaj" Grid.Row="9" Margin="3" FontSize="15" Background="Plum"  Style="{StaticResource RoundedButton}">
+                        <Viewbox>
+                            <TextBlock TextWrapping="Wrap"><Run Language="tr-tr" Text="GRAMAJ"/></TextBlock>
+                        </Viewbox>
+                    </Button>
+                    <Button Name="BtCikis" Grid.Row="10" Margin="3"  FontSize="20" Background="CadetBlue" Style="{StaticResource RoundedButton}">
+                        <Viewbox>
+                            <TextBlock TextWrapping="Wrap"><Run Language="tr-tr" Text="ÇIKIŞ"/></TextBlock>
+                        </Viewbox>
+                    </Button>
+                </Grid>
+            </Border>
+
+
+
+            <Border Grid.Column="0" Grid.Row="0" CornerRadius="5" BorderThickness="3" BorderBrush="DimGray" SnapsToDevicePixels="True" Background="DarkGray">
+                <Button Name="BtEtiketleme" Margin="0" Grid.Column="0" FontSize="20" Background="Gray"  Style="{StaticResource RoundedButton}">
+                    <TextBlock x:Name="TbBaslik" Grid.Row="0"  FontWeight="ExtraBold"   TextAlignment="Justify" FontSize="17"  Foreground="Black"   ><Run Language="tr-tr" Text="Etiketleme"/></TextBlock>
+                </Button>
+            </Border>
+
+
+
+            <Border Grid.Column="6" Grid.Row="0" Margin="2" Padding="1" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="Beige">
+                <TextBlock Name="TbListeSayi" FontSize="20" TextWrapping="Wrap"><Run Language="tr-tr" Text=""/></TextBlock>
+            </Border>
+            <Line Grid.Row="0" Grid.ColumnSpan="7" VerticalAlignment="Bottom"   Stroke="Red"  StrokeThickness="3" X2="{Binding Path=ActualWidth, RelativeSource={RelativeSource Self}}" />
+
+            <ComboBox Name="CbYazici"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="3" Grid.ColumnSpan="3" FontSize="10" Style="{StaticResource ComboBoxStyle}">
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="ComboBoxItem">
+                        <Setter Property="Width" Value="360"/>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+
+            <Border Grid.Row="1" Grid.ColumnSpan="6" Margin="1" Padding="1" CornerRadius="1" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="Black">
+                <DataGrid   Grid.Row="1"  
+                        Grid.ColumnSpan="6"
+                        HorizontalGridLinesBrush="#f0f0f0" 
+                        VerticalGridLinesBrush="#f0f0f0" 
+                        RowHeight="35"  
+                        Name="DgStok" 
+                        FontSize="25"
+                        HeadersVisibility="All"  
+                        CanUserAddRows="False" 
+                        VerticalAlignment="Stretch" 
+                        SelectionMode="Single"
+                        Background="Gray"
+                        RowBackground="White"
+                        AlternatingRowBackground="Aquamarine" 
+                        AlternationCount="1"
+                        VerticalScrollBarVisibility="Auto"
+                        Margin="5">
+
+                    <DataGrid.Resources>
+                        <Style TargetType="ScrollBar">
+                            <Style.Triggers>
+                                <Trigger Property="Orientation" Value="Vertical">
+                                    <Setter Property="Width" Value="50"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.Resources>
+
+                </DataGrid>
+            </Border>
+
+            <Border Grid.Row="2" Grid.ColumnSpan="6" Margin="1" Padding="1" CornerRadius="1" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="Black">
+                <DataGrid   Grid.Row="2"  
+                        Grid.ColumnSpan="6"
+                        HorizontalGridLinesBrush="#f0f0f0" 
+                        VerticalGridLinesBrush="#f0f0f0" 
+                        RowHeight="35"  
+                        Name="DgOnay" 
+                        AllowDrop="True"
+                        FontSize="25"
+                        HeadersVisibility="All"  
+                        CanUserAddRows="False" 
+                        VerticalAlignment="Stretch" 
+                        SelectionMode="Single"
+                        Background="LightGray"
+                        RowBackground="White"
+                        AlternatingRowBackground="Aquamarine" 
+                        AlternationCount="1"
+                        VerticalScrollBarVisibility="Auto" 
+                        Margin="5">
+
+                    <DataGrid.Resources>
+                        <Style TargetType="ScrollBar">
+                            <Style.Triggers>
+                                <Trigger Property="Orientation" Value="Vertical">
+                                    <Setter Property="Width" Value="50"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.Resources>
+
+                </DataGrid>
+            </Border>
+
+
+            <Grid 
+                  Grid.Row="3" 
+                  Width="Auto" 
+                  Height="Auto" 
+                  TextBlock.FontSize="20"
+                  TextElement.FontWeight="Bold"
+                  VerticalAlignment="Stretch" 
+                  HorizontalAlignment="Stretch" 
+                  Grid.ColumnSpan="6"  >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <ComboBox Name="CbTur" Grid.Column="0" Style="{StaticResource ComboBoxStyle}" >
+                    <ComboBoxItem Content="Açıklama" FontSize="20"/>
+                    <ComboBoxItem Content="Stokkodu"/>
+                    <ComboBoxItem Content="Barkod"/>
+                </ComboBox>
+
+                <Border Grid.Column="1" Margin="1" Padding="1" CornerRadius="1" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="DarkOrange">
+                    <TextBox Name="TbAciklama" Height="Auto" Width="Auto" TextWrapping="Wrap" Text=""/>
+
+                </Border>
+
+                <CheckBox Name="RbDogrudanYazici" Grid.Column="2" FontSize="17" >
+                    <TextBlock TextWrapping="Wrap"><Run Language="tr-tr" Text="Doğrudan Yazıcı"/></TextBlock>
+                </CheckBox>
+
+                <Border Grid.Column="3" Margin="1" Padding="1" CornerRadius="1" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="LightGray">
+                    <TextBlock TextWrapping="Wrap"><Run Language="tr-tr" Text="Adet"/></TextBlock>
+                </Border>
+                <Border Grid.Column="4" Margin="1" Padding="1" CornerRadius="1" BorderThickness="1" BorderBrush="LightGray" SnapsToDevicePixels="True" Background="DarkOrange">
+                    <TextBox Name="tBAdet"/>
+                </Border>
+
+                <ComboBox Name="CbEtiket" Grid.Column="5" Style="{StaticResource ComboBoxStyle}" >
+
+                </ComboBox>
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+</Window>
+
+    

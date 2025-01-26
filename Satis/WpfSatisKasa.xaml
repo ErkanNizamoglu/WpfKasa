@@ -1,0 +1,781 @@
+﻿<Window x:Class="WpfSatis"
+        Name="WpfSatis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="600" 
+        Width="800"
+        Title="Ana Sayfa"
+        Loaded="Main"
+        Language="Tr-tr"
+        AllowsTransparency="True"
+        WindowStyle="None">
+    <Window.LayoutTransform>
+        <ScaleTransform ScaleX="1.5" ScaleY="1.5" CenterX=".5" CenterY=".5" />
+    </Window.LayoutTransform>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Style/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid x:Name="AnaGrid">
+        <Rectangle  Grid.ColumnSpan="3"
+                    Name="RtAnagrid"
+                    Grid.RowSpan="6"
+                    Stroke="RoyalBlue"
+                    StrokeThickness="5" 
+                    Fill="Transparent" />
+
+        <DockPanel>
+
+            <Border x:Name="BrStatausBar" DockPanel.Dock="Top" BorderBrush="Blue" Margin="2,2,2,2" Visibility="Collapsed" Grid.ColumnSpan="5" BorderThickness="2">
+                <Grid  x:Name="GrStatus" Height="30" Background="AliceBlue" Margin="3" >
+                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                         <Grid Margin="3">
+                            <ProgressBar Minimum="0" 
+                                         Background="Aqua"
+                                         Foreground="Red"
+                                         
+                                    Maximum="100" 
+                                    Name="pbCpu" />
+                            <TextBlock Text="{Binding ElementName=pbCpu, Path=Value, StringFormat={}{0:0}%}" 
+                                                    HorizontalAlignment="Center" 
+                                                    VerticalAlignment="Center" />
+                        </Grid>
+                            
+                        <Grid Margin="3">
+                            <ProgressBar Minimum="0" 
+                                         Background="Aqua"
+                                         Foreground="Red"
+                                         
+                                    Maximum="100" 
+                                    Name="pbRam" />
+                                <TextBlock Text="{Binding ElementName=pbRam, Path=Value, StringFormat={}{0:0}%}" 
+                                                    HorizontalAlignment="Center" 
+                                                    VerticalAlignment="Center" />
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+
+            <Grid  x:Name="GrSatisAna" Visibility="Visible"  Background="Black" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="50" />
+                    <RowDefinition  Height="1*"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="14*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+
+
+
+                <Grid Name="GrSatisTumu" Visibility="Visible" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">
+
+                    <Grid  x:Name="GrSatis" 
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   Visibility="Hidden" 
+                   Background="Black" 
+                   Margin="1,2,1,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="39*"/>
+                            <RowDefinition  Height="8*"/>
+                        </Grid.RowDefinitions>
+
+
+                        <Border Name="BrTeraziPasif" BorderBrush="Aqua"  Grid.Column="0" Grid.Row="0" BorderThickness="2">
+                            <Grid Name="GrGrup" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <TabControl x:Name="TcGrUrunler" TabStripPlacement="Right">
+                                </TabControl>
+                            </Grid>
+                        </Border>
+
+
+                        <Border Name="BrTeraziAktif" BorderBrush="Aqua"  Grid.Column="0" Grid.Row="0" BorderThickness="2">
+                            <TabControl x:Name="TcSatis" TabStripPlacement="Top" Background="WhiteSmoke">
+                                <TabItem Name="TpGrup" Header="Ürünler" Height="60" FontSize="45">
+                                    <TabControl x:Name="TcTIUrunler" TabStripPlacement="Right">
+                                    </TabControl>
+                                </TabItem>
+                                <TabItem Name="TpTerazi" Header="Terazi" Height="60" FontSize="45">
+                                    <TabControl x:Name="TcTerazi" TabStripPlacement="Right">
+                                    </TabControl>
+                                </TabItem>
+                            </TabControl>
+                        </Border>
+
+                        <Grid  x:Name="GrSatisMenu" 
+                   Grid.Row="1"
+                   Visibility="Visible"
+                   Background="Black" 
+                   Margin="1">
+                        </Grid>
+                    </Grid>
+
+                    <Grid  x:Name="GrTahsilat" 
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   Visibility="Hidden" 
+                   Background="Black" 
+                   Margin="1,2,1,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+
+
+
+                        <Grid Name="GrKupur" Grid.Row="0"  Background="Firebrick">
+                            <Grid.RowDefinitions>
+                                <RowDefinition  Height="1*"/>
+                                <RowDefinition  Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Name="GrBanknot" Grid.Row="0" Background="Turquoise"/>
+                            <Grid Name="GrMadeni" Grid.Row="1" Background="Silver" />
+                        </Grid>
+
+
+                        <Grid Name="GrOdeme" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" Background="Bisque"/>
+
+                    </Grid>
+
+                </Grid>
+
+
+
+                <Border BorderBrush="Aqua" Name="BrGridGrupDurum" Visibility="Visible" Grid.Column="1" Grid.Row="0" BorderThickness="2">
+
+
+                    <Button x:Name="BtGridGrupDurum" Background="Blue"  
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Margin="5"
+                                    Width="auto" 
+                                    Grid.Column="2" 
+                                    Grid.Row="0">
+                        <Viewbox Stretch="Fill">
+                            <Grid >
+                                <ProgressBar Name="PbPlu" />
+                                <TextBlock Name="TbGrupDurum" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+
+                        </Viewbox>
+                    </Button>
+                </Border>
+
+                <Border BorderBrush="Aqua" Name="BrGridStokDurum" Visibility="Visible" Grid.Column="2" Grid.Row="0" BorderThickness="2">
+                    <Button x:Name="BtGridStokDurum" Background="WhiteSmoke"   
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Margin="5"
+                                    Width="auto" 
+                                    Grid.Column="2" 
+                                    Grid.Row="0">
+                        <Viewbox Stretch="Uniform">
+                            <TextBlock Name="TbStokDurum" Text="" />
+                        </Viewbox>
+                    </Button>
+                </Border>
+
+
+                <Border BorderBrush="Aqua" Name="BrGridUrunDurum" Grid.Column="0" Grid.Row="0" BorderThickness="2">
+                    <Button x:Name="BtGridUrunDurum" Background="Blue"  
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Margin="5"
+                                    Width="auto" 
+                                    Grid.Column="2" 
+                                    Grid.Row="0">
+                        <Viewbox Stretch="Uniform">
+                            <TextBlock Name="TbUrunDurum" Text="" />
+                        </Viewbox>
+                    </Button>
+                </Border>
+
+                <Grid  x:Name="GrSatisMenuPanel" Background="Black" Grid.Column="0" Grid.Row="1" Grid.RowSpan="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="3*" />
+                        <RowDefinition  Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+
+
+                    </Grid.ColumnDefinitions>
+
+                    <Border Name="BrDgSatis" BorderBrush="Red" Grid.Row="0" Grid.Column="0"  BorderThickness="3">
+                        <DataGrid Margin="1"
+                              Grid.Column="1" 
+                              Grid.Row="0" 
+                              CanUserAddRows="False" 
+                              CanUserDeleteRows="False" 
+                              AutoGenerateColumns="False" 
+                              ScrollViewer.VerticalScrollBarVisibility="Visible"
+                              RowHeight="45"
+                              Name="DgSatis" >
+
+                            <DataGrid.Resources>
+                                <Style TargetType="ScrollBar">
+                                    <Style.Triggers>
+                                        <Trigger Property="Orientation" Value="Vertical">
+                                            <Setter Property="Width" Value="50"/>
+                                        </Trigger>
+                                        <Trigger Property="Orientation" Value="Horizontal">
+                                            <Setter Property="Height" Value="50"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.Resources>
+
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="AÇIKLAMA">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button ToolTip="{Binding urun}" 
+                                                ToolTipService.IsEnabled="False" 
+                                                Style="{StaticResource RoundedButton}" 
+                                                Click="GridUrunClick"
+                                                Height="auto" 
+                                                Width="auto">
+                                                <Viewbox Stretch="Fill"  StretchDirection="DownOnly">
+                                                    <TextBlock Name="DgTbAciklama" FontSize="42" Width="400" FontWeight="ExtraBlack" TextWrapping="Wrap" Text="{Binding urun_aciklama}">
+                                                        <TextBlock.Style>
+                                                            <Style TargetType="TextBlock">
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding indirim_yuzde_var}" Value="True">
+                                                                        <Setter Property="Background" Value="LightGreen"  />
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding indirim_tutar_var}" Value="True">
+                                                                        <Setter Property="Background" Value="LightGreen"   />
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding iptal}" Value="True">
+                                                                        <Setter Property="TextDecorations" Value="StrikeThrough"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding miktar}" Value="0">
+                                                                        <Setter Property="Background" Value="Red" />
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding ozelfiyat}" Value="True">
+                                                                        <Setter Property="Background" Value="Yellow" />
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding iptal}" Value="True">
+                                                                        <Setter Property="Background" Value="Red" />
+                                                                    </DataTrigger>
+
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </TextBlock.Style>
+                                                    </TextBlock>
+                                                </Viewbox>
+                                            </Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Header="MİKTAR">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Viewbox Stretch="Uniform" Grid.Row="0" Width="Auto">
+                                                <TextBlock Text="{Binding miktar, StringFormat='{}{0:N3}',Mode=OneWay}">
+                                                    <TextBlock.Style>
+                                                        <Style TargetType="TextBlock">
+                                                            <Style.Triggers>
+                                                                <Trigger Property="Text" Value="{x:Null}">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </Trigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </TextBlock.Style>
+                                                </TextBlock>
+                                            </Viewbox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Header="BİRİM" Visibility="Hidden">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Viewbox Stretch="Uniform"  Grid.Row="0" Width="Auto">
+                                                <TextBlock Text="{Binding birim_aciklama}">
+                                                    <TextBlock.Style>
+                                                        <Style TargetType="TextBlock">
+                                                            <Style.Triggers>
+                                                                <Trigger Property="Text" Value="{x:Null}">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </Trigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </TextBlock.Style>
+                                                </TextBlock>
+                                            </Viewbox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Header="FİYAT">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Viewbox Stretch="Uniform"  Grid.Row="0" Width="Auto">
+                                                <TextBlock Text="{Binding fiyat, StringFormat='{}{0:C}',Mode=OneWay}">
+                                                    <TextBlock.Style>
+                                                        <Style TargetType="TextBlock">
+                                                            <Style.Triggers>
+                                                                <Trigger Property="Text" Value="{x:Null}">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </Trigger>
+                                                                <Trigger Property="Text" Value="0,00 ₺">
+                                                                    <Setter Property="Background" Value="Red" />
+                                                                </Trigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </TextBlock.Style>
+                                                </TextBlock>
+                                            </Viewbox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="TUTAR">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Viewbox Stretch="Uniform"  Grid.Row="0" Width="Auto">
+                                                <TextBlock Text="{Binding net_tutar, StringFormat='{}{0:C}', Mode=OneWay}">
+                                                    <TextBlock.Style>
+                                                        <Style TargetType="TextBlock">
+                                                            <Style.Triggers>
+                                                                <Trigger Property="Text" Value="{x:Null}">
+                                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                                </Trigger>
+                                                                <Trigger Property="Text" Value="0,00 ₺">
+                                                                    <Setter Property="Background" Value="Red" />
+                                                                </Trigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </TextBlock.Style>
+                                                </TextBlock>
+                                            </Viewbox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Border>
+
+                    <Border Name="BrDgTahsilat" Visibility="Hidden" BorderBrush="Aqua" Grid.Row="0" Grid.Column="0"  BorderThickness="3">
+                        <DataGrid CanUserAddRows="False" 
+                          CanUserDeleteRows="False" 
+                          AutoGenerateColumns="False" 
+                          ScrollViewer.VerticalScrollBarVisibility="Visible"
+                          RowHeight="35"
+                          FontSize="25"    
+                          Name="DgTahsilat" >
+                            <DataGrid.Resources>
+                                <Style TargetType="ScrollBar">
+                                    <Style.Triggers>
+                                        <Trigger Property="Orientation" Value="Vertical">
+                                            <Setter Property="Width" Value="50"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.Resources>
+
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="ÖDEME">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Viewbox Stretch="Uniform" StretchDirection="DownOnly" Width="80">
+                                                <TextBlock Width="129" FontSize="25" TextWrapping="Wrap" Text="{Binding odeme_kod}"/>
+                                            </Viewbox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Header="TAHSİLAT">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid x:Name="GrTutar">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition />
+                                                </Grid.RowDefinitions>
+                                                <Viewbox Stretch="Uniform"  Grid.Row="0" Width="Auto">
+                                                    <TextBlock Text="{Binding tutar, StringFormat='{}{0:C}', Mode=OneWay}">
+                                                        <TextBlock.Style>
+                                                            <Style TargetType="TextBlock">
+                                                                <Style.Triggers>
+                                                                    <Trigger Property="Text" Value="{x:Null}">
+                                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                                    </Trigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </TextBlock.Style>
+                                                    </TextBlock>
+                                                </Viewbox>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Header="KALAN">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid x:Name="GrTutar">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition />
+                                                </Grid.RowDefinitions>
+                                                <Viewbox Stretch="Uniform"  Grid.Row="0" Width="Auto">
+                                                    <TextBlock Text="{Binding kalan, StringFormat='{}{0:C}', Mode=OneWay}">
+                                                        <TextBlock.Style>
+                                                            <Style TargetType="TextBlock">
+                                                                <Style.Triggers>
+                                                                    <Trigger Property="Text" Value="{x:Null}">
+                                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                                    </Trigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </TextBlock.Style>
+                                                    </TextBlock>
+                                                </Viewbox>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Border>
+
+                    <Border BorderBrush="Red"   Grid.Column="0" Grid.Row="1" Grid.RowSpan="4"  BorderThickness="2">
+                        <Grid  x:Name="GrHesap"  Margin="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition  Height="1*"/>
+                                <RowDefinition  Height="1*"/>
+                                <RowDefinition  Height="1*"/>
+                                <RowDefinition  Height="1*"/>
+                                <RowDefinition  Height="1*"/>
+                                <RowDefinition  Height="1*"/>
+
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Row="1" Grid.RowSpan="5" Background="Bisque" Grid.ColumnSpan="6">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="1*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <Button x:Name="Bt7" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="0" 
+                                    Grid.Row="0"
+                                    Grid.ColumnSpan="2">
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Text="7" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="Bt8" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="2" 
+                                    Grid.Row="0"
+                                    Grid.ColumnSpan="2">
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Text="8" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="Bt9" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="4" 
+                                    Grid.Row="0"
+                                    Grid.ColumnSpan="2">
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Text="9" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="Bt4" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="0" 
+                                    Grid.Row="1"
+                                    Grid.ColumnSpan="2">
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Text="4" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="Bt5" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="2" 
+                                    Grid.Row="1"
+                                    Grid.ColumnSpan="2">
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Text="5" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="Bt6" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="4" 
+                                    Grid.Row="1"
+                                    Grid.ColumnSpan="2">
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Text="6" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="Bt1" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="0" 
+                                    Grid.Row="2"
+                                    Grid.ColumnSpan="2">
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Text="1" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="Bt2" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="2" 
+                                    Grid.Row="2"
+                                    Grid.ColumnSpan="2">
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Text="2" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="Bt3" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="4" 
+                                    Grid.Row="2"
+                                    Grid.ColumnSpan="2">
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Text="3" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="Bt0" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="0" 
+                                    Grid.Row="5"
+                                    Grid.ColumnSpan="2">
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Text="0" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="BtBackSpace" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="4" 
+                                    Grid.Row="5"
+                                    Grid.ColumnSpan="2">
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Text="Back Space" />
+                                    </Viewbox>
+                                </Button>
+                                <Button x:Name="BtVirgul" Background="Gray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="2" 
+                                    Grid.Row="5"
+                                    Grid.ColumnSpan="2">
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Text="," />
+                                    </Viewbox>
+                                </Button>
+
+                            </Grid>
+
+
+
+
+                            <Button x:Name="BtMakina" Background="LightGray"
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="0" 
+                                    Grid.Row="0"
+                                    Grid.ColumnSpan="2">
+                                <Viewbox Stretch="Uniform">
+                                    <TextBlock Name="TbMakina" Text="" />
+                                </Viewbox>
+                            </Button>
+
+
+                            <Button x:Name="BtMakinaOrta" Background="LightGray"
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="2" 
+                                    Grid.Row="0"
+                                    Grid.ColumnSpan="4">
+                                <Viewbox Stretch="Uniform">
+                                    <TextBlock Name="TbMakinaOrta" Text=""/>
+                                </Viewbox>
+                            </Button>
+                            <Button x:Name="BtToplam" Background="DarkGray" 
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Column="6" 
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    Grid.ColumnSpan="3">
+                                <Viewbox Stretch="Uniform">
+                                    <TextBlock Name="TbToplam" Text="Toplam" />
+                                </Viewbox>
+                            </Button>
+
+
+                            <Grid Name="GrSatisMenuNumarator" Visibility="Visible" Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="3" Background="Lime" Grid.RowSpan="6">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="1*"/>
+                                </Grid.RowDefinitions>
+
+                                <Border BorderBrush="Aqua"
+                            x:Name="BrUrunAdet"    
+                            Visibility="Visible"    
+                            Grid.Column="0"
+                            Grid.Row="0" 
+                            Grid.RowSpan="3"        
+              
+                            BorderThickness="2">
+                                    <Button x:Name="BtUrunAdet" Background="Pink"  Style="{StaticResource RoundedButton}" Height="auto" 
+                                Margin="1" Width="auto">
+                                        <Viewbox>
+                                            <TextBlock Name="TbAdet" Text="ADET"/>
+                                        </Viewbox>
+                                    </Button>
+                                </Border>
+
+                                <Border BorderBrush="Aqua"
+                            Name="Briptal"    
+                            Grid.Column="0"
+                            Grid.Row="3" 
+                            Grid.RowSpan="3" 
+                            BorderThickness="2">
+                                    <Button x:Name="BtUrunSil" Background="Red" Style="{StaticResource RoundedButton}" Height="auto" 
+                                Margin="1" Width="auto">
+                                        <Viewbox>
+                                            <TextBlock Text="İPTAL"/>
+                                        </Viewbox>
+                                    </Button>
+                                </Border>
+                            </Grid>
+
+
+                            <Grid Name="GrTahsilatMenuNumarator" Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="3" Background="Lime" Grid.RowSpan="6" Visibility="Hidden">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="1*"/>
+                                    <RowDefinition  Height="1*"/>
+                                </Grid.RowDefinitions>
+
+                                <Border BorderBrush="Aqua"
+                            x:Name="BrYuvarla"    
+                            Visibility="Visible"    
+                            Grid.Column="0"
+                            Grid.RowSpan="2"
+                            Grid.Row="0" 
+                            BorderThickness="2">
+                                    <Button x:Name="BtYuvarla" Background="Green"  Style="{StaticResource RoundedButton}" Height="auto" 
+                                Margin="1" Width="auto">
+                                        <Viewbox>
+                                            <TextBlock Text="YUVARLA"/>
+                                        </Viewbox>
+                                    </Button>
+                                </Border>
+
+
+
+                                <Border BorderBrush="Aqua"
+                            Name="Brindirim"    
+                            Visibility="Visible"    
+                            Grid.Row="2" 
+                            Grid.RowSpan="2" 
+                            BorderThickness="2">
+                                    <Button x:Name="BtTutarIndirim" Background="Yellow" Style="{StaticResource RoundedButton}" Height="auto" 
+                                Margin="1" Width="auto">
+                                        <Viewbox>
+                                            <TextBlock Name="TbIndirim" Text="T.İNDİRİM"/>
+                                        </Viewbox>
+                                    </Button>
+                                </Border>
+
+
+
+
+
+                                <Button x:Name="BtYuzdeIndirim" Background="Purple"  
+                                    Style="{StaticResource RoundedButton}" 
+                                    Height="auto" 
+                                    Width="auto" 
+                                    Grid.Row="4"
+                                    Grid.RowSpan="2">
+                                    <Viewbox Stretch="Uniform">
+                                        <TextBlock Name="TbYudeIndirim" Text="%İndirim" />
+                                    </Viewbox>
+                                </Button>
+
+                            </Grid>
+                        </Grid>
+
+                    </Border>
+
+                </Grid>
+
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,125 @@
+﻿<Window x:Class="WpfFiyatGor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    WindowStartupLocation="CenterScreen"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStyle="None"
+    Title="Özel Fiyat" Height="270" Width="450">
+
+    <Window.LayoutTransform>
+        <ScaleTransform ScaleX="1.5" ScaleY="1.5" CenterX=".5" CenterY=".5" />
+    </Window.LayoutTransform>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Style/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Border CornerRadius="10"
+        BorderBrush="Gray"
+        BorderThickness="3"
+        Background="Beige"
+        Margin="10"
+        Padding="4">
+        <Border.Effect>
+            <DropShadowEffect Color="Gray"
+                      Opacity=".50"
+                      ShadowDepth="16" />
+        </Border.Effect>
+        <Grid Margin="3,11,3,3">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="45"/>
+                <RowDefinition  Height="90"/>
+                <RowDefinition  Height="75"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+               
+            </Grid.ColumnDefinitions>
+
+            
+            <Viewbox Grid.Column="0" Grid.Row="0" Stretch="Uniform">
+                <TextBlock x:Name="TbBaslik" Grid.Column="0" Grid.Row="0" 
+                           HorizontalAlignment="Left"  
+                           FontWeight="ExtraBold"  
+                           TextAlignment="Center" 
+                           Foreground="Black"   ><Run Language="tr-tr" Text="FİYAT GÖR"/></TextBlock>
+            </Viewbox>
+
+            <Grid Grid.Row="1" Background="Black">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="45"/>
+                    <RowDefinition  Height="45"/>
+                </Grid.RowDefinitions>
+
+                <Border BorderBrush="Red"   Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Background="Beige" BorderThickness="2">
+                    <DockPanel>
+                        <Viewbox Stretch="Uniform" HorizontalAlignment="Right">
+                    <TextBlock x:Name="TbFiyat"  
+                           HorizontalAlignment="Right"  
+                             Text=""
+                             FontSize="45"
+                           FontWeight="ExtraBold"  
+                           TextAlignment="Center" 
+                           Foreground="Black"/>
+                        </Viewbox>
+                    </DockPanel>
+                    
+                </Border>
+
+                <Border BorderBrush="Red"   Grid.Column="0" Grid.Row="1" Background="Beige" BorderThickness="2">
+                    <DockPanel>
+                        <Viewbox Stretch="Uniform" HorizontalAlignment="Right">
+                            <TextBlock x:Name="TbAciklama"  
+                           HorizontalAlignment="Right"  
+                             Text=""
+                             FontSize="45"
+                           FontWeight="ExtraBold"  
+                           TextAlignment="Center" 
+                           Foreground="Black"/>
+                        </Viewbox>
+                    </DockPanel>
+                </Border>
+
+            </Grid>
+
+            <Grid Margin="1" Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Button x:Name="BtCikis"  
+                        Background="Red"
+                        FontSize="42" 
+                        Style="{StaticResource MetroButton}"  
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch" 
+                        Grid.Column="0"
+                        Width="Auto" 
+                        Height="Auto">
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="ÇIKIŞ" />
+                    </Viewbox>
+                </Button>
+                
+                <Button x:Name="BtAktar"  
+                        Background="Blue"
+                        FontSize="42" 
+                        Style="{StaticResource MetroButton}"  
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch" 
+                        Grid.Column="1"
+                        Width="Auto" 
+                        Height="Auto">
+                    <Viewbox Stretch="Uniform">
+                        <TextBlock Text="AKTAR" />
+                    </Viewbox>
+                </Button>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
